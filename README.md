@@ -47,3 +47,11 @@ curl 'localhost:3000/events?token=dev'
 - **Phase 2** — on `ClientReadyGenerated`, fetch the report/data from Broadridge and store it per plan
 - **Phase 3** — quarterly run (Claude scheduled task + MCP tools): sponsor package, watch-list memo, 3(38) decision memo, minutes template; file to client folder; update the 401(k) policy record and log activity in Salesforce via bca-salesforce-mcp
 - **Phase 4** — expected-vs-received fee reconciliation against commission statement items
+
+## Repo layout
+
+| Path | What |
+|---|---|
+| `server.js` | Phase 1 webhook receiver (Railway) |
+| `tools/build_screen.py` | Builds the quarterly screening workbook from the Fidelity FPRS platform list |
+| `docs/QUARTERLY_RUNBOOK.md` | The quarterly monitoring procedure (mirrors the `bca-quarterly-fund-monitoring` skill) |
